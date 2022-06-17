@@ -16,6 +16,7 @@ app.use(express.json())
 const userRoutes = require('./routes/userRoutes')
 
 app.use('/user', userRoutes)
+app.use('/pets', petRoutes)
 
 // endpoint
 app.get('/', (req, res) => {
