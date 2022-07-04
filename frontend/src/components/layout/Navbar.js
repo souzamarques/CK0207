@@ -20,7 +20,10 @@ function Navbar() {
       </div>
       <ul>
         <li>
-          <Link to="/">Adotar</Link>
+          <Link to="/">Início</Link>
+        </li>
+        <li>
+          <Link to="/home">Adotar</Link>
         </li>
         {authenticated ? (
           <>

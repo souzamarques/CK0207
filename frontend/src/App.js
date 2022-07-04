@@ -9,6 +9,7 @@ import Container from './components/layout/Container'
 
 /* pages */
 import Home from './components/pages/Home'
+import About from './components/pages/About'
 import Login from './components/pages/Auth/Login'
 import Register from './components/pages/Auth/Register'
 import Profile from './components/pages/User/Profile'
@@ -52,8 +53,11 @@ function App() {
             <Route path="/pet/:id">
               <PetDetails />
             </Route>
-            <Route path="/">
+            <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/">
+              <About />
             </Route>
           </Switch>
         </Container>
