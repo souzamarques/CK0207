@@ -29,7 +29,7 @@
 }
 
 .pet_card h3 {
-  color: #16479d;
+  color: #0b47ae;
   margin-bottom: 1em;
   font-size: 1.6em;
   padding: 8px;
@@ -41,8 +41,8 @@
 
 .pet_card a {
   border-radius: 8px;
-  color: #16479d;
-  background-color: #ffd400;
+  color: #ffffff;
+  background-color: #1b51ae;
   border: none;
   min-width: 100px;
   padding: 15px;
@@ -54,12 +54,12 @@
 }
 
 .pet_card a:hover {
-  background-color: #e7c30d;
+  background-color: #4474c8;
   color: #fff;
 }
 
 .adopted_text {
   font-weight: bold;
-  color: #25b456;
+  color: #24ab53;
   padding: 15px;
 }

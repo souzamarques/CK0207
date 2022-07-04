@@ -17,7 +17,7 @@ function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.navbar_logo}>
         <img src={Logo} alt="Get A Pet" />
-        <h2>Get A Pet</h2>
+        <h2>ADOTE UM PET</h2>
       </div>
       <ul>
         <li>
