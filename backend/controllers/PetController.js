@@ -12,9 +12,12 @@ module.exports = class PetController {
     const age = req.body.age
     const description = req.body.description
     const weight = req.body.weight
-    const color = req.body.color
+    const race = req.body.race
     const images = req.files
     const available = true
+    const wormed = true
+    const sex = req.body.sex
+    const size = req.body.size
 
     // console.log(req.body)
     console.log(images)
@@ -36,13 +39,28 @@ module.exports = class PetController {
       return
     }
 
-    if (!color) {
+    if (!race) {
       res.status(422).json({ message: 'A cor é obrigatória!' })
       return
     }
 
     if (!images) {
       res.status(422).json({ message: 'A imagem é obrigatória!' })
+      return
+    }
+
+ /*   if (!wormed) {
+      res.status(422).json({ message: 'A vermifugacao é obrigatória!' })
+      return
+    } */
+
+    if (!size) {
+      res.status(422).json({ message: 'O tamanho é obrigatório!' })
+      return
+    }
+
+    if (!sex) {
+      res.status(422).json({ message: 'O sexo é obrigatória!' })
       return
     }
 
@@ -56,8 +74,11 @@ module.exports = class PetController {
       age: age,
       description: description,
       weight: weight,
-      color: color,
+      race: race,
       available: available,
+      wormed: wormed,
+      sex: sex,
+      size: size,
       images: [],
       user: {
         _id: user._id,
@@ -183,9 +204,12 @@ module.exports = class PetController {
     const age = req.body.age
     const description = req.body.description
     const weight = req.body.weight
-    const color = req.body.color
+    const race = req.body.race
     const images = req.files
     const available = req.body.available
+    const wormed = req.body.wormed
+    const sex = req.body.sex
+    const size = req.body.size
 
     const updateData = {}
 
@@ -231,11 +255,11 @@ module.exports = class PetController {
       updateData.weight = weight
     }
 
-    if (!color) {
+    if (!race) {
       res.status(422).json({ message: 'A cor é obrigatória!' })
       return
     } else {
-      updateData.color = color
+      updateData.race = race
     }
 
     if (!images) {
@@ -253,6 +277,27 @@ module.exports = class PetController {
       return
     } else {
       updateData.available = available
+    }
+
+    if (!wormed) {
+      res.status(422).json({ message: 'A vermifugacao é obrigatória!' })
+      return
+    } else {
+      updateData.wormed = wormed
+    }
+
+    if (!sex) {
+      res.status(422).json({ message: 'O sexo é obrigatório!' })
+      return
+    } else {
+      updateData.sex = sex
+    }
+
+    if (!size) {
+      res.status(422).json({ message: 'O tamanho é obrigatório!' })
+      return
+    } else {
+      updateData.size = size
     }
 
     updateData.description = description

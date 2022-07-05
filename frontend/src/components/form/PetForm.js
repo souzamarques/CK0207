@@ -9,6 +9,9 @@ function PetForm({ handleSubmit, petData, btnText }) {
   const [pet, setPet] = useState(petData || {})
   const [preview, setPreview] = useState([])
   const colors = ['Branco', 'Preto', 'Cinza', 'Caramelo']
+  const race = ['Labrador', 'Pitbull', 'Doberman', 'Vira-lata']
+  const sex = ['Macho', 'Femea']
+  const size = ['Pequeno', 'Medio', 'Grande']
 
   function onFileChange(e) {
     console.log(Array.from(e.target.files))
@@ -24,6 +27,27 @@ function PetForm({ handleSubmit, petData, btnText }) {
     setPet({
       ...pet,
       color: e.target.options[e.target.selectedIndex].text,
+    })
+  }
+
+  function handleRace(e) {
+    setPet({
+      ...pet,
+      race: e.target.options[e.target.selectedIndex].text,
+    })
+  }
+
+  function handleSex(e) {
+    setPet({
+      ...pet,
+      sex: e.target.options[e.target.selectedIndex].text,
+    })
+  }
+
+  function handleSize(e) {
+    setPet({
+      ...pet,
+      size: e.target.options[e.target.selectedIndex].text,
     })
   }
 
@@ -75,6 +99,21 @@ function PetForm({ handleSubmit, petData, btnText }) {
         handleOnChange={handleChange}
         value={pet.age || ''}
       />
+      <Select
+        name="sex"
+        text="Selecione o sexo"
+        options={sex}
+        handleOnChange={handleSex}
+        value={pet.sex || ''}
+      />
+
+      <Select
+        name="size"
+        text="Tamanho do pet"
+        options={size}
+        handleOnChange={handleSize}
+        value={pet.size || ''}
+      />
       <Input
         text="Peso do Pet"
         type="number"
@@ -84,11 +123,20 @@ function PetForm({ handleSubmit, petData, btnText }) {
         handleOnChange={handleChange}
       />
       <Select
-        name="color"
+        name="race"
         text="Selecione a categoria"
-        options={colors}
-        handleOnChange={handleColor}
-        value={pet.color || ''}
+        options={race}
+        handleOnChange={handleRace}
+        value={pet.race || ''}
+      />
+
+      <Input
+        text="Observaçao sobre o pet"
+        type="text"
+        name="description"
+        placeholder="Observação"
+        handleOnChange={handleChange}
+        value={pet.description || ''}
       />
       <input type="submit" value={btnText} />
     </form>

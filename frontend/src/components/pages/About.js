@@ -17,7 +17,7 @@ function About() {
   return (
     <section>
         <h1>Sobre</h1>
-        <p>jhdfhagsdfjhagsdkjhfgasdkhfgadkhfgadkfhagsdfjhagdkfjhgadfhgadkfhgadhg</p>
+        <p>O site Adote um Pet......................</p>
     </section>
   )
 }

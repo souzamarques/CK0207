@@ -19,7 +19,7 @@ const Pet = mongoose.model(
       type: Number,
       required: true,
     },
-    color: {
+    race: {
       type: String,
       required: true,
     },
@@ -29,6 +29,17 @@ const Pet = mongoose.model(
     },
     available: {
       type: Boolean,
+    },
+    wormed: {
+      type: Boolean,
+    },
+    sex: {
+      type: String,
+      required: true,
+    },
+    size: {
+      type: String,
+      required: true,
     },
     user: Object,
     adopter: Object,
