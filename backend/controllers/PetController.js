@@ -15,9 +15,9 @@ module.exports = class PetController {
     const race = req.body.race
     const images = req.files
     const available = true
-    const wormed = false
-    const sex = req.body.size
-    const size = req.body.description
+    const wormed = true
+    const sex = req.body.sex
+    const size = req.body.size
 
     // console.log(req.body)
     console.log(images)
@@ -49,10 +49,10 @@ module.exports = class PetController {
       return
     }
 
-    if (!wormed) {
+ /*   if (!wormed) {
       res.status(422).json({ message: 'A vermifugacao é obrigatória!' })
       return
-    }
+    } */
 
     if (!size) {
       res.status(422).json({ message: 'O tamanho é obrigatório!' })
