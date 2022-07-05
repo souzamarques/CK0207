@@ -315,7 +315,7 @@ module.exports = class PetController {
 
     if (pet.user._id.equals(user._id)) {
       res.status(422).json({
-        message: 'Você não pode agendar uma visita com seu próprio Pet!',
+        message: 'Você não pode solicitar adoção do seu próprio Pet!',
       })
       return
     }
@@ -324,7 +324,7 @@ module.exports = class PetController {
     if (pet.adopter) {
       if (pet.adopter._id.equals(user._id)) {
         res.status(422).json({
-          message: 'Você já agendou uma visita para este Pet!',
+          message: 'Você já solicitou a adoção para este Pet!',
         })
         return
       }
@@ -342,7 +342,7 @@ module.exports = class PetController {
     await Pet.findByIdAndUpdate(pet._id, pet)
 
     res.status(200).json({
-      message: `A visita foi agendada com sucesso, entre em contato com ${pet.user.name} no telefone: ${pet.user.phone}`,
+      message: `Você solicitou a adoção com sucesso, entre em contato com ${pet.user.name} no telefone: ${pet.user.phone}`,
     })
   }
 
