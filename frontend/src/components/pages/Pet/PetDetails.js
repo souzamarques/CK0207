@@ -47,8 +47,8 @@ function PetDetails() {
       {pet.name && (
         <section className={styles.pet_details_container}>
           <div className={styles.petdetails_header}>
-            <h1>Conhecendo o Pet: {pet.name}</h1>
-            <p>Se tiver interesse, marque uma visita para conhecê-lo!</p>
+            <h1>Informações sobre o pet: {pet.name}</h1>
+            <p>Se tiver interesse, solicite adoção</p>
           </div>
           <div className={styles.pet_images}>
             {pet.images.map((image, index) => (
@@ -74,12 +74,15 @@ function PetDetails() {
           <p>
             <span className="bold">Vermifugado:</span> {pet.wormed}
           </p>
+          <p>
+            <span className="bold">Observação:</span> {pet.description}
+          </p>
           {token ? (
-            <button onClick={schedule}>Solicitar uma Visita</button>
+            <button onClick={schedule}>Solicitar adoção</button>
           ) : (
             <p>
               Você precisa <Link to="/register">criar uma conta</Link> para
-              solicitar a visita.
+              solicitar adoção.
             </p>
           )}
         </section>
