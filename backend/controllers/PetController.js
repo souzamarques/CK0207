@@ -279,13 +279,6 @@ module.exports = class PetController {
       updateData.available = available
     }
 
-    /*if (!wormed) {
-      res.status(422).json({ message: 'A vermifugacao é obrigatória!' })
-      return
-    } else {
-      updateData.wormed = wormed
-    }*/
-
     if (!sex) {
       res.status(422).json({ message: 'O sexo é obrigatório!' })
       return
