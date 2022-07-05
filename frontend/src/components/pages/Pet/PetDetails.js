@@ -72,7 +72,7 @@ function PetDetails() {
             <span className="bold">Tamanho:</span> {pet.size}
           </p>
           <p>
-            <span className="bold">Vermifugado:</span> {pet.wormed}
+            <span className="bold">Vermifugado:</span> {pet.wormed ? 'Sim': 'Não'}
           </p>
           <p>
             <span className="bold">Observação:</span> {pet.description}

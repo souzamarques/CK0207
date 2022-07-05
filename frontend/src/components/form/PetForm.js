@@ -8,7 +8,6 @@ import Select from './Select'
 function PetForm({ handleSubmit, petData, btnText }) {
   const [pet, setPet] = useState(petData || {})
   const [preview, setPreview] = useState([])
-  const colors = ['Branco', 'Preto', 'Cinza', 'Caramelo']
   const race = ['Labrador', 'Pitbull', 'Doberman', 'Vira-lata']
   const sex = ['Macho', 'Femea']
   const size = ['Pequeno', 'Medio', 'Grande']
@@ -21,13 +20,6 @@ function PetForm({ handleSubmit, petData, btnText }) {
 
   function handleChange(e) {
     setPet({ ...pet, [e.target.name]: e.target.value })
-  }
-
-  function handleColor(e) {
-    setPet({
-      ...pet,
-      color: e.target.options[e.target.selectedIndex].text,
-    })
   }
 
   function handleRace(e) {
@@ -49,6 +41,10 @@ function PetForm({ handleSubmit, petData, btnText }) {
       ...pet,
       size: e.target.options[e.target.selectedIndex].text,
     })
+  }
+
+  function handleWormed(e) {
+    setPet({ ...pet, [e.target.name]: e.target.checked })
   }
 
   const submit = (e) => {
@@ -128,6 +124,13 @@ function PetForm({ handleSubmit, petData, btnText }) {
         options={race}
         handleOnChange={handleRace}
         value={pet.race || ''}
+      />
+
+      <Input
+        text="Seu Pet é vermifugado"
+        type="checkbox"
+        name="wormed"
+        handleOnChange={handleWormed}
       />
 
       <Input
