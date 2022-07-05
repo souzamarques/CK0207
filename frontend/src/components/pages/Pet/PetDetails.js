@@ -60,6 +60,9 @@ function PetDetails() {
             ))}
           </div>
           <p>
+            <span className="bold">Tipo:</span> {pet.race}
+          </p>
+          <p>
             <span className="bold">Peso:</span> {pet.weight}kg
           </p>
           <p>

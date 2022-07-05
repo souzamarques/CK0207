@@ -40,7 +40,7 @@ module.exports = class PetController {
     }
 
     if (!race) {
-      res.status(422).json({ message: 'A cor é obrigatória!' })
+      res.status(422).json({ message: 'A raça é obrigatória!' })
       return
     }
 
@@ -256,7 +256,7 @@ module.exports = class PetController {
     }
 
     if (!race) {
-      res.status(422).json({ message: 'A cor é obrigatória!' })
+      res.status(422).json({ message: 'A raça é obrigatória!' })
       return
     } else {
       updateData.race = race
@@ -279,12 +279,12 @@ module.exports = class PetController {
       updateData.available = available
     }
 
-    if (!wormed) {
+    /*if (!wormed) {
       res.status(422).json({ message: 'A vermifugacao é obrigatória!' })
       return
     } else {
       updateData.wormed = wormed
-    }
+    }*/
 
     if (!sex) {
       res.status(422).json({ message: 'O sexo é obrigatório!' })

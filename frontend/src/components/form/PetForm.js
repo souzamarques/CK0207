@@ -9,7 +9,7 @@ function PetForm({ handleSubmit, petData, btnText }) {
   const [pet, setPet] = useState(petData || {})
   const [preview, setPreview] = useState([])
   const colors = ['Branco', 'Preto', 'Cinza', 'Caramelo']
-  const race = ['Labrador', 'Pitbull', 'Doberman', 'Vira-lata']
+  const race = ['Cachorro', 'Gato']
   const sex = ['Macho', 'Femea']
   const size = ['Pequeno', 'Medio', 'Grande']
 
@@ -124,7 +124,7 @@ function PetForm({ handleSubmit, petData, btnText }) {
       />
       <Select
         name="race"
-        text="Selecione a categoria"
+        text="Selecione a espécie"
         options={race}
         handleOnChange={handleRace}
         value={pet.race || ''}
