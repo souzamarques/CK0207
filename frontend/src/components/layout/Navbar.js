@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 
 import styles from './Navbar.module.css'
 
-import Logo from '../../assets/img/logo.png'
+
 
 /* contexts */
 import { Context } from '../../context/UserContext'

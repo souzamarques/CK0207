@@ -23,13 +23,6 @@ function PetForm({ handleSubmit, petData, btnText }) {
     setPet({ ...pet, [e.target.name]: e.target.value })
   }
 
-  function handleColor(e) {
-    setPet({
-      ...pet,
-      color: e.target.options[e.target.selectedIndex].text,
-    })
-  }
-
   function handleRace(e) {
     setPet({
       ...pet,
@@ -49,6 +42,10 @@ function PetForm({ handleSubmit, petData, btnText }) {
       ...pet,
       size: e.target.options[e.target.selectedIndex].text,
     })
+  }
+
+  function handleWormed(e) {
+    setPet({ ...pet, [e.target.name]: e.target.checked })
   }
 
   const submit = (e) => {
@@ -128,6 +125,13 @@ function PetForm({ handleSubmit, petData, btnText }) {
         options={race}
         handleOnChange={handleRace}
         value={pet.race || ''}
+      />
+
+      <Input
+        text="Seu Pet é vermifugado"
+        type="checkbox"
+        name="wormed"
+        handleOnChange={handleWormed}
       />
 
       <Input
